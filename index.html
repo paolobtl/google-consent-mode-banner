@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>cookie</title>
+    <link rel="stylesheet" href="/style.css" type="text/css" media="all" />    
+</head>
+<body>
+    <div class="containerbox" id="containerbox">
+        <div class="contenuto">
+        <h3 class="text titoloinformativa">Informativa</h3>
+            <p class="text">
+                Questo sito utilizza cookie tecnici ed altri strumenti tecnici necessari per il suo 
+                funzionamento. Inoltre, laddove rilasciassi il tuo consenso 
+                cliccando su "Accetta tutto" o nella sezione raggiungibile cliccando 
+                su "Impostazioni cookies", potrà installare anche cookie di profilazione 
+                o altri strumenti di tracciamento al fine di mostrare messaggi 
+                pubblicitari e/o personalizzare i propri servizi, in linea con 
+                le preferenze espresse dall'utente nell'ambito del suo utilizzo 
+                di funzionalità e navigazione web e/o al fine di analizzare e 
+                monitorare il comportamento dei visitatori del sito. 
+                Cliccando su "Rifiuta tutto" le impostazioni predefinite 
+                vengono lasciate invariate e quindi la navigazione può 
+                continuare senza cookie o altri strumenti di tracciamento diversi da quello tecnico. 
+                Per maggiori informazioni visualizza la cookie policy.
+                </p>
+      
+            <div class="optgroup">   
+                <div class="checkboxes">
+                    <div class="checkbox checkbox-analytics">
+                        <input type="checkbox" name="checkanalytics" id="checkanalytics" value="analytics">
+                        <label for="checkanalytics">Analytics</label>
+                    </div>
+                    <div class="checkbox checkbox-ads">
+                        <input type="checkbox" name="checkads" id="checkads" value="ads">
+                        <label for="checkads">Ads</label>
+                    </div>
+                </div>
+                <div class="btn-group">
+                        <button class="btn-consent accetta" onclick="accettaTutto(); hideIt()">Accetta tutto </button>
+                        <button class="btn-consent rifiuta" onclick="rifiutaTutto(); hideIt()">Rifiuta tutto </button>
+                        <button class="btn-consent selezionati" onclick="accettaSelezione(); hideIt()">Accetta selezionati</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+</html>

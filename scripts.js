@@ -20,32 +20,11 @@ function rifiutaTutto() {
     });
 };
 
-var choice = updateChoice();
-
-function updateChoice() {
-    var choice = localStorage.getItem('option')
-    if (choice === 'analytics') {
-        return {'ad_storage' : 'denied', 'analytics_storage' : 'granted'}
-    }
-    else if (choice === 'ads') {
-        return {'ad_storage' : 'granted', 'analytics_storage' : 'denied'}
-    }
-    else {
-        return {'ad_storage' : 'denied', 'analytics_storage' : 'denied'}
-    }
-}
 
 
-function accettaSelezione(){
-    window.dataLayer.push({
-        'event': 'consent_updated',
-    });
-    gtag('consent', 'update', {
-        choice,
-    });
-}
 
-/* Read checkbox value*/
+
+/* Read checkbox value and write it in localStorage */
 var banner = document.getElementById("containerbox");
 if (localStorage.getItem('option') === null){
     banner.setAttribute('style', 'display:block')

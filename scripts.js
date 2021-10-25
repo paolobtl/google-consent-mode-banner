@@ -1,8 +1,3 @@
-window.dataLayer = window.dataLayer || [];
-
-function gtag() {
-    dataLayer.push(arguments);
-}
 
 /* Accetta-Rifiuta button clicks */
 function accettaTutto() {

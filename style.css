@@ -29,11 +29,11 @@
     box-shadow: var(--shadow);
     transition-duration: 0.5s;
     opacity: ;
-        -webkit-transition: all 0.5s ease-in-out;
-        -moz-transition: all 0.5s ease-in-out;
-        -ms-transition: all 0.5s ease-in-out;
-        -o-transition: all 0.5s ease-in-out;
-        transition: all 0.5s ease-in-out;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
     -webkit-animation: fadein 2s;
     /* Safari, Chrome and Opera > 12.1 */
     -moz-animation: fadein 2s;
@@ -45,57 +45,61 @@
     animation: fadein 1s;
 }
 
+
 /* Animation */
 
 @keyframes fadein {
     from {
         opacity: 0;
     }
-
     to {
         opacity: 1;
     }
 }
 
+
 /* Firefox < 16 */
+
 @-moz-keyframes fadein {
     from {
         opacity: 0;
     }
-
     to {
         opacity: 1;
     }
 }
 
+
 /* Safari, Chrome and Opera > 12.1 */
+
 @-webkit-keyframes fadein {
     from {
         opacity: 0;
     }
-
     to {
         opacity: 1;
     }
 }
 
+
 /* Internet Explorer */
+
 @-ms-keyframes fadein {
     from {
         opacity: 0;
     }
-
     to {
         opacity: 1;
     }
 }
 
+
 /* Opera < 12.1 */
+
 @-o-keyframes fadein {
     from {
         opacity: 0;
     }
-
     to {
         opacity: 1;
     }
@@ -152,7 +156,6 @@
     margin-left: .5em;
 }
 
-
 @media only screen and (max-width: 600px) {
     .btn-group {
         display: flex;
@@ -160,11 +163,9 @@
         justify-content: center;
         align-self: center;
     }
-
     .accetta {
         margin-right: 3%;
     }
-
     .containerbox {
         width: 100%;
         transform: translateY(0);
@@ -176,7 +177,6 @@
         padding: 8px;
         background: var(--bg-light);
     }
-
     div {
         display: block;
     }

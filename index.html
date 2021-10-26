@@ -14,7 +14,10 @@
         function gtag() {
             dataLayer.push(arguments);
         }
-        consentDefault();
+        gtag('consent', 'default', {
+            ad_storage: 'denied',
+            analytics_storage: 'denied'
+        });
         gtag('js', new Date());
         gtag('config', 'UA-182866828-4');
     </script>

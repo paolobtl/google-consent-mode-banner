@@ -26,7 +26,7 @@ function hideIt() {
     localStorage.setItem('option', selection);
 }
 
-consentDefault() {
+function consentDefault() {
     gtag('consent', 'default', {
         ad_storage: 'denied',
         analytics_storage: 'denied'

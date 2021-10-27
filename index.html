@@ -7,7 +7,7 @@
     <title>cookie</title>
     <link rel="stylesheet" href="style.css" type="text/css" media="all" />
     <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-0000000-0"></script>
+<!--     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-0000000-0"></script> -->
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag() {
@@ -18,8 +18,15 @@
             analytics_storage: 'denied'
         }); 
         <!-- In alternativa puoi inserire lo script di Tag manager qui sotto-->
-        gtag('js', new Date());
-        gtag('config', 'UA-183668086-1');
+//         gtag('js', new Date());
+//         gtag('config', 'UA-183668086-1');
+        <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PS65VZZ');</script>
+<!-- End Google Tag Manager -->
     </script>
 
 </head>
@@ -54,7 +61,7 @@
             </div>
         </div>
     </div>
-    <button onclick="gtag('event', 'click',{'event_label': 'My promotional video','event_category': 'video_auto_play','non_interaction': true});">CLICK ME</button>
+    <button onclick="window.dataLayer.push({'event': 'clickBottone'});">CLICK ME</button>
     <script src="scripts.js"></script>
 </body>
 

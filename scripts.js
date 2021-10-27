@@ -22,18 +22,10 @@ function showIt() {
 }
 
 function hideIt() {
-    document.getElementById('containerbox').style.opacity = '0';
+    document.getElementById('containerbox').style.display = 'none';
     localStorage.setItem('option', selection);
 }
 
-
-/* Consent Default */
-function consentDefault() {
-    gtag('consent', 'default', {
-        ad_storage: 'denied',
-        analytics_storage: 'denied'
-    });
-}
 
 /* Set update command based on previous selection */
 var selezione = localStorage.getItem('selezione');

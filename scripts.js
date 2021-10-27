@@ -26,6 +26,12 @@ function hideIt() {
     localStorage.setItem('option', selection);
 }
 
+consentDefault() {
+    gtag('consent', 'default', {
+        ad_storage: 'denied',
+        analytics_storage: 'denied'
+        });
+}
 
 /* Set update command based on previous selection */
 var selezione = localStorage.getItem('selezione');

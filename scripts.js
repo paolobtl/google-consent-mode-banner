@@ -1,7 +1,7 @@
 /* Read checkbox value and write it in localStorage */
 var selection;
-var checkboxes = document.querySelectorAll('#containerbox input[type=checkbox]');
-checkboxes.forEach(function(el) {
+var radios = document.querySelectorAll('#containerbox input[type=radio]');
+radios.forEach(function(el) {
     el.addEventListener('click', function(event) {
         selection = event.target.value;
         return selection;

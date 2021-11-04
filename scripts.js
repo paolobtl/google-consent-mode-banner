@@ -105,5 +105,5 @@ pulsanteSelezione.forEach(function(el) {
 /* Clear LocalStorage and reload the page */
 function clear(){
     localStorage.clear();
-    window.location.reload(true);
+    window.location.reload();
 }

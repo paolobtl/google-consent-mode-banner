@@ -68,9 +68,9 @@ pulsanteSelezione.forEach(function(el) {
         } else {
             rifiutaTutto();
         }
+        consentUpdate();
     });
 });
-
 
 /* Set update command based on previous selection */
 var selezione = localStorage.getItem('selezione');

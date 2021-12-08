@@ -99,7 +99,6 @@ if (selezione) {
 var consentButton = document.querySelectorAll('.btn-consent');
 consentButton.forEach(function(el) {
     el.addEventListener('click', function(event) {
-    location.reload();
-    }
-  });
+        location.reload();
+    });
 });

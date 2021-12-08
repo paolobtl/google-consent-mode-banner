@@ -1,11 +1,12 @@
 var consentAnalytics = 0, consentAds = 0;
 
-function consentUpdate(a,b){
+function consentUpdate(){
     gtag('consent','update',{
-        ad_storage: a === 0 ? 'denied' : 'granted',
-        analytics_storage: b === 0 ? 'denied' : 'granted'
+        ad_storage: consentAds === 0 ? 'denied' : 'granted',
+        analytics_storage: consentAnalytics === 0 ? 'denied' : 'granted'
     })
 }
+/*consentUpdate(consentAds, consentAnalytics);*/
 
 
 /* Read checkbox value and write it in localStorage */
@@ -91,5 +92,3 @@ switch (selezione) {
     default:
         
 }
-
-consentUpdate(consentAds, consentAnalytics);

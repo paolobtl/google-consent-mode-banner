@@ -70,6 +70,7 @@ pulsanteSelezione.forEach(function(el) {
         }
         consentUpdate();
     });
+    location.reload();
 });
 
 /* Set update command based on previous selection */

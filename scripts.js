@@ -63,10 +63,8 @@ function accettaTutto() {
         event: 'update_consent_granted'
     });
     localStorage.setItem('selezione', 'granted');
-    gtag('consent', 'update', {
-        adPrefe: 'granted',
-        anPrefe: 'granted'
-    });
+        adPrefe: 'granted';
+        anPrefe: 'granted';
 }
 
 function rifiutaTutto() {
@@ -74,8 +72,8 @@ function rifiutaTutto() {
         event: 'update_consent_denied'
     });
     localStorage.setItem('selezione', 'denied');
-        adPrefe: 'denied',
-        anPrefe: 'denied'
+        adPrefe: 'denied';
+        anPrefe: 'denied';
 }
 
 var pulsanteSelezione = document.querySelectorAll('.selezionati');

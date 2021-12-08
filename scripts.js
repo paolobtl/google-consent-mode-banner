@@ -1,3 +1,13 @@
+var consentAnalytics = 0, consentAds = 0;
+
+function consentUpdate(a,b){
+    gtag('consent','update',{
+        ad_storage: a === 0 ? 'denied' : 'granted',
+        analytics_storage: b === 0 ? 'denied' : 'granted'
+    })
+}
+
+
 /* Read checkbox value and write it in localStorage */
 var selection;
 var radios = document.querySelectorAll('#containerbox input[type=radio]');
@@ -27,48 +37,14 @@ function hideIt() {
 }
 
 
-/* Consent Default */
-function consentDefault() {
-    gtag('consent', 'default', {
-        ad_storage: 'denied',
-        analytics_storage: 'denied'
-    });
-}
-
-/* Set update command based on previous selection */
-var selezione = localStorage.getItem('selezione');
-switch (selezione) {
-    case 'granted':
-        accettaTutto();
-        break;
-    case 'denied':
-        rifiutaTutto();
-        break;
-    case 'analytics':
-        gtag('consent', 'update', {
-            ad_storage: 'denied',
-            analytics_storage: 'granted'
-        });
-        break;
-    case 'ads':
-        gtag('consent', 'update', {
-            ad_storage: 'granted',
-            analytics_storage: 'denied'
-        });
-        break;
-    default:
-        consentDefault();
-}
 /* Consent update, based on buttons selection */
 function accettaTutto() {
     window.dataLayer.push({
         event: 'update_consent_granted'
     });
     localStorage.setItem('selezione', 'granted');
-    gtag('consent', 'update', {
-        ad_storage: 'granted',
-        analytics_storage: 'granted'
-    });
+    consentAnalytics = 1;
+    consentAds = 1;
 }
 
 function rifiutaTutto() {
@@ -76,10 +52,8 @@ function rifiutaTutto() {
         event: 'update_consent_denied'
     });
     localStorage.setItem('selezione', 'denied');
-    gtag('consent', 'update', {
-        ad_storage: 'denied',
-        analytics_storage: 'denied'
-    });
+    consentAnalytics = 0;
+    consentAds = 0;
 }
 
 var pulsanteSelezione = document.querySelectorAll('.selezionati');
@@ -87,17 +61,35 @@ pulsanteSelezione.forEach(function(el) {
     el.addEventListener('click', function(event) {
         localStorage.setItem('selezione', selection);
         if (selection === 'analytics') {
-            gtag('consent', 'update', {
-                ad_storage: 'denied',
-                analytics_storage: 'granted'
-            });
+            consentAnalytics = 1;
         } else if (selection === 'ads') {
-            gtag('consent', 'update', {
-                ad_storage: 'granted',
-                analytics_storage: 'denied'
-            });
+            consentAds = 1;
         } else {
             rifiutaTutto();
         }
     });
 });
+
+
+/* Set update command based on previous selection */
+var selezione = localStorage.getItem('selezione');
+switch (selezione) {
+    case 'granted':
+        consentAnalytics = 1,
+        consentAds = 1;
+        break;
+    case 'denied':
+        consentAnalytics = 0,
+        consentAds = 0;
+        break;
+    case 'analytics':
+            consentAnalytics = 1;
+        break;
+    case 'ads':
+            consentAds = 1;
+        break;
+    default:
+        
+}
+
+consentUpdate(consentAds, consentAnalytics);

@@ -1,3 +1,5 @@
+var adPrefe = 'denied', anPrefe = 'denied';
+
 /* Read checkbox value and write it in localStorage */
 var selection;
 var radios = document.querySelectorAll('#containerbox input[type=radio]');
@@ -35,6 +37,8 @@ function consentDefault() {
     });
 }
 
+
+
 /* Set update command based on previous selection */
 var selezione = localStorage.getItem('selezione');
 switch (selezione) {
@@ -45,16 +49,10 @@ switch (selezione) {
         rifiutaTutto();
         break;
     case 'analytics':
-        gtag('consent', 'update', {
-            ad_storage: 'denied',
-            analytics_storage: 'granted'
-        });
+        adPrefe: 'granted';
         break;
     case 'ads':
-        gtag('consent', 'update', {
-            ad_storage: 'granted',
-            analytics_storage: 'denied'
-        });
+            adPrefe: 'granted',
         break;
     default:
         consentDefault();
@@ -66,8 +64,8 @@ function accettaTutto() {
     });
     localStorage.setItem('selezione', 'granted');
     gtag('consent', 'update', {
-        ad_storage: 'granted',
-        analytics_storage: 'granted'
+        adPrefe: 'granted',
+        anPrefe: 'granted'
     });
 }
 
@@ -76,10 +74,8 @@ function rifiutaTutto() {
         event: 'update_consent_denied'
     });
     localStorage.setItem('selezione', 'denied');
-    gtag('consent', 'update', {
-        ad_storage: 'denied',
-        analytics_storage: 'denied'
-    });
+        adPrefe: 'denied',
+        anPrefe: 'denied'
 }
 
 var pulsanteSelezione = document.querySelectorAll('.selezionati');
@@ -87,17 +83,17 @@ pulsanteSelezione.forEach(function(el) {
     el.addEventListener('click', function(event) {
         localStorage.setItem('selezione', selection);
         if (selection === 'analytics') {
-            gtag('consent', 'update', {
-                ad_storage: 'denied',
-                analytics_storage: 'granted'
-            });
+                anPrefe: 'granted'
         } else if (selection === 'ads') {
-            gtag('consent', 'update', {
-                ad_storage: 'granted',
-                analytics_storage: 'denied'
-            });
+                adPrefe: 'granted',
         } else {
             rifiutaTutto();
         }
     });
 });
+
+
+gtag('consent', 'update' {
+    ad_storage: adPrefe,
+    analytics_storage: anPrefe
+})

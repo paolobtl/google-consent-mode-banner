@@ -1,7 +1,8 @@
-var consentAnalytics = 0, consentAds = 0;
+var consentAnalytics = 0,
+    consentAds = 0;
 
-function consentUpdate(){
-    gtag('consent','update',{
+function consentUpdate() {
+    gtag('consent', 'update', {
         ad_storage: consentAds === 0 ? 'denied' : 'granted',
         analytics_storage: consentAnalytics === 0 ? 'denied' : 'granted'
     })
@@ -77,17 +78,17 @@ var selezione = localStorage.getItem('selezione');
 switch (selezione) {
     case 'granted':
         consentAnalytics = 1,
-        consentAds = 1;
+            consentAds = 1;
         break;
     case 'denied':
         consentAnalytics = 0,
-        consentAds = 0;
+            consentAds = 0;
         break;
     case 'analytics':
-            consentAnalytics = 1;
+        consentAnalytics = 1;
         break;
     case 'ads':
-            consentAds = 1;
+        consentAds = 1;
         break;
     default:
 }

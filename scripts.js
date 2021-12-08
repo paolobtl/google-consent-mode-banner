@@ -17,6 +17,7 @@ radios.forEach(function(el) {
         selection = event.target.value;
         return selection;
     });
+   location.reload();
 });
 
 /* Banner showing/not showing if localStorage is not/empty */
@@ -70,7 +71,6 @@ pulsanteSelezione.forEach(function(el) {
         }
         consentUpdate();
     });
-    location.reload();
 });
 
 /* Set update command based on previous selection */

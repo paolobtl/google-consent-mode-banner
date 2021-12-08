@@ -1,5 +1,4 @@
-var consentAnalytics = 0,
-    consentAds = 0;
+var consentAnalytics = 0, consentAds = 0;
 
 function consentUpdate() {
     gtag('consent', 'update', {

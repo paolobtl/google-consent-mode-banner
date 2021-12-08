@@ -46,6 +46,7 @@ function accettaTutto() {
     localStorage.setItem('selezione', 'granted');
     consentAnalytics = 1;
     consentAds = 1;
+    consentUpdate();
 }
 
 function rifiutaTutto() {
@@ -55,13 +56,13 @@ function rifiutaTutto() {
     localStorage.setItem('selezione', 'denied');
     consentAnalytics = 0;
     consentAds = 0;
+    consentUpdate();
 }
 
 var pulsanteSelezione = document.querySelectorAll('.selezionati');
 pulsanteSelezione.forEach(function(el) {
     el.addEventListener('click', function(event) {
         localStorage.setItem('selezione', selection);
-        console.log('Selezione');
         if (selection === 'analytics') {
             consentAnalytics = 1;
         } else if (selection === 'ads') {
@@ -69,7 +70,6 @@ pulsanteSelezione.forEach(function(el) {
         } else {
             rifiutaTutto();
         };
-       consentUpdate();
     });   
 });
 

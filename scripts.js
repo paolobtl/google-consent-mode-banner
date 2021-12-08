@@ -83,7 +83,7 @@ pulsanteSelezione.forEach(function(el) {
         if (selection === 'analytics') {
                 anPrefe: 'granted'
         } else if (selection === 'ads') {
-                adPrefe: 'granted',
+                adPrefe: 'granted'
         } else {
             rifiutaTutto();
         }
@@ -91,7 +91,7 @@ pulsanteSelezione.forEach(function(el) {
 });
 
 
-gtag('consent', 'update' {
+gtag('consent', 'update', {
     ad_storage: adPrefe,
     analytics_storage: anPrefe
 })

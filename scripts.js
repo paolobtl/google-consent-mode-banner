@@ -16,7 +16,6 @@ radios.forEach(function(el) {
     el.addEventListener('click', function(event) {
         selection = event.target.value;
         return selection;
-        location.reload();
     });
 });
 

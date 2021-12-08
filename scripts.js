@@ -68,8 +68,9 @@ pulsanteSelezione.forEach(function(el) {
         } else {
             rifiutaTutto();
         }
-        consentUpdate();
-    });
+    consentUpdate();
+    console.log('Selezione');
+    });   
 });
 
 /* Set update command based on previous selection */

@@ -90,5 +90,7 @@ switch (selezione) {
             consentAds = 1;
         break;
     default:
-        
+}
+if (selezione) {
+    consentUpdate();
 }

@@ -52,7 +52,7 @@ switch (selezione) {
         adPrefe: 'granted';
         break;
     case 'ads':
-            adPrefe: 'granted',
+        adPrefe: 'granted';
         break;
     default:
         consentDefault();

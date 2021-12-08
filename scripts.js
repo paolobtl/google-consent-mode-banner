@@ -61,15 +61,15 @@ var pulsanteSelezione = document.querySelectorAll('.selezionati');
 pulsanteSelezione.forEach(function(el) {
     el.addEventListener('click', function(event) {
         localStorage.setItem('selezione', selection);
+        console.log('Selezione');
         if (selection === 'analytics') {
             consentAnalytics = 1;
         } else if (selection === 'ads') {
             consentAds = 1;
         } else {
             rifiutaTutto();
-        }
-    consentUpdate();
-    console.log('Selezione');
+        };
+       consentUpdate();
     });   
 });
 

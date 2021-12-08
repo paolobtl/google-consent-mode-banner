@@ -60,8 +60,7 @@ function rifiutaTutto() {
 var pulsanteSelezione = document.querySelectorAll('.selezionati');
 pulsanteSelezione.forEach(function(el) {
     el.addEventListener('click', function(event) {
-        localStorage.setItem('selezione', 
-                            );
+        localStorage.setItem('selezione', selection);
         if (selection === 'analytics') {
             consentAnalytics = 1;
         } else if (selection === 'ads') {
@@ -95,10 +94,3 @@ switch (selezione) {
 if (selezione) {
     consentUpdate();
 }
-/* Page reload */
-var consentButton = document.querySelectorAll('.btn-consent');
-consentButton.forEach(function(el) {
-    el.addEventListener('click', function(event) {
-        location.reload();
-    });
-});
